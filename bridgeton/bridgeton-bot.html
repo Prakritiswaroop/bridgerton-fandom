@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lady Whistledown's Society Bot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CHATBOT STYLING --- */
+        #whistledown-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 350px;
+            background: #ffffff;
+            border: 2px solid #b08d57; /* Gold Frame */
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            font-family: 'Playfair Display', serif;
+            z-index: 1000;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        #chat-header {
+            background: #735d78; /* Wisteria Purple */
+            color: #e8d1a7; /* Champagne Gold */
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        #chat-content {
+            display: flex;
+            flex-direction: column;
+            background-color: #fdfaf5; /* Parchment Paper color */
+        }
+
+        #chat-logs {
+            height: 380px;
+            overflow-y: auto;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            scrollbar-width: thin;
+            scrollbar-color: #b08d57 #fdfaf5;
+        }
+
+        /* Message Bubbles */
+        .bot-msg, .user-msg {
+            max-width: 85%;
+            padding: 12px;
+            font-size: 14.5px;
+            line-height: 1.5;
+            border-radius: 8px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .bot-msg {
+            align-self: flex-start;
+            background: #faf3ff;
+            border: 1px solid #735d78;
+            color: #4a3a4d;
+            font-style: italic;
+        }
+
+        .user-msg {
+            align-self: flex-end;
+            background: #e0e0e0;
+            color: #222;
+            border-bottom: 3px solid #735d78;
+        }
+
+        /* Image Styling from Wikipedia */
+        .wiki-img {
+            width: 100%;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            border: 1px solid #b08d57;
+        }
+
+        /* Input Area */
+        #input-area {
+            display: flex;
+            padding: 15px;
+            background: #fff;
+            border-top: 1px solid #e8d1a7;
+        }
+
+        #user-input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #b08d57;
+            border-radius: 4px;
+            font-family: 'Playfair Display', serif;
+            outline: none;
+        }
+
+        #input-area button {
+            background: #735d78;
+            color: #e8d1a7;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 8px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        #input-area button:hover {
+            background: #5e4a62;
+            color: #fff;
+        }
+
+        /* Hide Scrollbar for Chrome/Safari */
+        #chat-logs::-webkit-scrollbar { width: 6px; }
+        #chat-logs::-webkit-scrollbar-thumb { background: #b08d57; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div style="padding: 100px; text-align: center; color: #735d78;">
+        <h1>Your Competition Website</h1>
+        <p>The Lady Whistledown Chatbot is active in the bottom right corner.</p>
+    </div>
+
+    <div id="whistledown-widget">
+        <div id="chat-header" onclick="toggleChat()">
+            <span>The Society Paper</span>
+            <span id="toggle-icon">−</span>
+        </div>
+        <div id="chat-content">
+            <div id="chat-logs">
+                <div class="bot-msg">
+                    Dearest Reader, the Ton is abuzz with curiosity. Which figure shall we investigate for scandal today?
+                </div>
+            </div>
+            <div id="input-area">
+                <input type="text" id="user-input" placeholder="Enter a name..." onkeypress="checkEnter(event)">
+                <button onclick="publishGossip()">Publish</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* --- CHATBOT LOGIC --- */
+
+        // 1. Toggle Chat Visibility
+        function toggleChat() {
+            const content = document.getElementById('chat-content');
+            const icon = document.getElementById('toggle-icon');
+            if (content.style.display === "none") {
+                content.style.display = "flex";
+                icon.innerText = "−";
+            } else {
+                content.style.display = "none";
+                icon.innerText = "+";
+            }
+        }
+
+        // 2. Handle Enter Key
+        function checkEnter(e) {
+            if (e.key === 'Enter') publishGossip();
+        }
+
+        // 3. Main Wikipedia Fetch Function
+        async function publishGossip() {
+            const input = document.getElementById('user-input');
+            const logs = document.getElementById('chat-logs');
+            const target = input.value.trim();
+
+            if (!target) return;
+
+            // Display User Message
+            logs.innerHTML += `<div class="user-msg">I require information on ${target}.</div>`;
+            input.value = "";
+            logs.scrollTop = logs.scrollHeight;
+
+            try {
+                // Fetch from Wikipedia Summary API
+                const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(target)}`;
+                const response = await fetch(url);
+                const data = await response.json();
+
+                let responseHTML = "";
+
+                if (data.type === 'standard') {
+                    // Include image if available
+                    const img = data.thumbnail ? `<img src="${data.thumbnail.source}" class="wiki-img">` : "";
+                    
+                    responseHTML = `
+                        ${img}
+                        <strong>Dearest Reader,</strong><br><br>
+                        My sources indicate that ${data.title} is a person of high regard. 
+                        ${data.extract}<br><br>
+                        <em>Yours Truly, Lady Whistledown</em>
+                    `;
+                } else {
+                    responseHTML = "Alas, that name has not yet reached the ears of this author. Perhaps they are of no consequence?";
+                }
+
+                // Artificial delay for "writing" effect
+                setTimeout(() => {
+                    logs.innerHTML += `<div class="bot-msg">${responseHTML}</div>`;
+                    logs.scrollTop = logs.scrollHeight;
+                }, 700);
+
+            } catch (error) {
+                logs.innerHTML += `<div class="bot-msg">It seems the post-boy has lost my latest column. Do try again.</div>`;
+                logs.scrollTop = logs.scrollHeight;
+            }
+        }
+    </script>
+</body>
+</html>

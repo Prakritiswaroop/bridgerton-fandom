@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <title>The Music Room | Harmonious Praises</title>
+    <style>
+        :root {
+            --saffron-gold: #e3963e;
+            --honey-yellow: #ffdb58;
+            --deep-amber: #b87333;
+            --silk-cream: rgba(255, 253, 245, 0.95);
+            --ink-black: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            /* UPDATED: Reference to your music.jpeg with a golden-tinted overlay */
+            background-image: linear-gradient(rgba(227, 150, 62, 0.3), rgba(0, 0, 0, 0.8)), 
+                              url('music.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--ink-black);
+            min-height: 100vh;
+            border: 15px solid var(--saffron-gold);
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: var(--silk-cream);
+            border-bottom: 2px solid var(--saffron-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3rem; 
+            color: var(--deep-amber);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 0;
+        }
+
+        nav { 
+            margin-top: 25px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+        }
+
+        nav a { 
+            text-decoration: none; 
+            color: var(--ink-black); 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--saffron-gold);
+            border-bottom: 2px solid var(--saffron-gold);
+        }
+
+        .chamber { 
+            max-width: 800px; 
+            margin: 60px auto; 
+            padding: 50px; 
+            background: var(--silk-cream);
+            border: 1px solid var(--honey-yellow);
+            box-shadow: 20px 20px 0px var(--saffron-gold);
+            text-align: center;
+        }
+
+        .musical-note {
+            font-size: 2rem;
+            color: var(--saffron-gold);
+            margin-bottom: 20px;
+        }
+
+        blockquote {
+            font-size: 1.6rem;
+            font-style: italic;
+            line-height: 1.4;
+            color: var(--deep-amber);
+            margin: 40px 0;
+            position: relative;
+        }
+
+        blockquote::before, blockquote::after {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            color: var(--honey-yellow);
+            position: absolute;
+            opacity: 0.5;
+        }
+
+        blockquote::before { top: -30px; left: -20px; }
+        blockquote::after { bottom: -60px; right: -20px; }
+
+        .attribution {
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--ink-black);
+        }
+
+        footer { 
+            padding: 40px; 
+            text-align: center; 
+            background: var(--deep-amber);
+            color: white;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="orchestra" loop>
+        <source src="wildest-dreams.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <header>
+        <p style="letter-spacing: 3px; color: var(--saffron-gold);">SONGS OF THE SOVEREIGN</p>
+        <h1>THE MUSIC ROOM</h1>
+        <nav>
+            <a href="index.html">Entrance</a>
+            <a href="pedigree.html">Pedigree</a>
+            <a href="offerings.html">Stakes</a>
+            <a href="papers.html">News</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="music-room.html" style="color: var(--saffron-gold);">Library</a>
+            <a href="drawing-room.html">Drawing Room</a>
+            <a href="conservatory.html">Garden</a>
+            <a href="modiste.html">Atelier</a>
+            <a href="writing-desk.html">Correspondence</a>
+        </nav>
+
+        <div style="margin-top: 20px;">
+            <button id="play-btn" onclick="playMusic()" style="
+                background: var(--saffron-gold);
+                color: white;
+                border: none;
+                padding: 10px 25px;
+                font-family: 'Playfair Display', serif;
+                font-style: italic;
+                cursor: pointer;
+                border-radius: 30px;
+                letter-spacing: 1px;
+                box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+                transition: 0.3s;">
+                Click to Summon the Orchestra
+            </button>
+        </div>
+    </header>
+
+    <div class="chamber">
+        <div class="musical-note">♩ ♪ ♫ ♬</div>
+        <h2 style="font-family: 'Playfair Display'; font-style: italic; font-size: 2.2rem; margin-top: 0;">Whispers of Approval</h2>
+        
+        <blockquote style="margin: 40px 20px;">
+            "There are no words in the English language to describe the brilliance of this estate. It is a symphony of strategy and grace."
+        </blockquote>
+        <p class="attribution">— The Viscount Bridgerton</p>
+
+        <hr style="border: 0; border-top: 1px solid var(--honey-yellow); margin: 50px 0;">
+
+        <blockquote style="margin: 40px 20px;">
+            "I have never seen anyone handle the ton—or a mallet—with such effortless mastery. Truly an incomparable experience."
+        </blockquote>
+        <p class="attribution">— Lady Danbury</p>
+    </div>
+
+    <footer>
+        <p>"You must know... you have been the song in my head since the moment we met."</p>
+        <small style="color: var(--honey-yellow);">🐾 Newton has a surprising appreciation for the cello.</small>
+    </footer>
+
+    <script>
+    function playMusic() {
+        var song = document.getElementById("orchestra");
+        var btn = document.getElementById("play-btn");
+
+        if (song.currentTime === 0) {
+            song.currentTime = 41; 
+        }
+
+        if (song.paused) {
+            song.play();
+            btn.innerHTML = "⏸ Pause the Symphony";
+            btn.style.background = "#b87333"; 
+        } else {
+            song.pause();
+            btn.innerHTML = "▶ Resume the Symphony";
+            btn.style.background = "var(--saffron-gold)";
+        }
+    }
+    </script>
+
+</body>
+</html>

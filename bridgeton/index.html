@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <title>The Sovereign Estate | Kate Inspired</title>
+    <style>
+        :root {
+            --sharma-blue: #002366;
+            --spiced-saffron: #e3963e;
+            --silk-cream: rgba(255, 253, 245, 0.95);
+        }
+
+        body {
+            margin: 0;
+            /* UPDATED: Reference to your local bg.jpeg with a dark overlay for readability */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), 
+                              url('bg.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Cormorant Garamond', serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            border: 15px solid var(--sharma-blue); /* Frame the whole page */
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: var(--silk-cream);
+            border-bottom: 2px solid var(--spiced-saffron);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3rem; 
+            color: var(--sharma-blue);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 0;
+        }
+
+        nav { 
+            margin-top: 25px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+        }
+
+        nav a { 
+            text-decoration: none; 
+            color: #1a1a1a; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--sharma-blue);
+            border-bottom: 2px solid var(--spiced-saffron);
+        }
+
+        .chamber { 
+            max-width: 800px; 
+            margin: auto; 
+            padding: 50px; 
+            background: var(--silk-cream);
+            border: 1px solid var(--spiced-saffron);
+            box-shadow: 20px 20px 0px var(--sharma-blue);
+            text-align: center;
+        }
+
+        .btn-sovereign {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 35px;
+            background: var(--sharma-blue);
+            color: white;
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            letter-spacing: 1px;
+            transition: 0.4s;
+        }
+
+        .btn-sovereign:hover {
+            background: var(--spiced-saffron);
+            transform: translateY(-3px);
+        }
+
+        footer { 
+            padding: 40px; 
+            text-align: center; 
+            background: var(--sharma-blue);
+            color: white;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p style="letter-spacing: 3px; color: var(--spiced-saffron);">THE SEASON'S MOST SPIRITED DEBUT</p>
+        <h1>THE SHARMA ESTATE</h1>
+        <nav>
+            <a href="index.html" style="color: var(--sharma-blue);">Entrance</a>
+            <a href="pedigree.html">Pedigree</a>
+            <a href="offerings.html">Stakes</a>
+            <a href="papers.html">News</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="music-room.html">Library</a>
+            <a href="drawing-room.html">Drawing Room</a>
+            <a href="conservatory.html">Garden</a>
+            <a href="modiste.html">Atelier</a>
+            <a href="writing-desk.html">Correspondence</a>
+        </nav>
+    </header>
+
+    <div class="chamber">
+        <h2 style="font-family: 'Playfair Display'; font-style: italic; font-size: 2.2rem;">"You are the bane of my existence... and the object of all my desires."</h2>
+        <hr style="width: 50px; border: 1px solid var(--spiced-saffron); margin: 20px auto;">
+        <p>They say a lady should be quiet, submissive, and dutiful. This estate was built by a woman who chose to be **unforgettable** instead.</p>
+        <p>Step inside, for we have no time for the faint of heart.</p>
+        <a href="offerings.html" class="btn-sovereign">Declare Your Intentions</a>
+    </div>
+
+    <footer>
+        <p>"I find I have no desire to please you. I simply desire to be right."</p>
+        <small style="color: var(--spiced-saffron);">🐾 Vrinda is watching you.</small>
+    </footer>
+
+</body>
+</html>

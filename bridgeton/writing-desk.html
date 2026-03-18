@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <title>The Writing Desk | Secret Correspondences</title>
+    <style>
+        :root {
+            --mahogany: #4a2c2a;
+            --sepia-ink: #5e4b3c;
+            --parchment-tan: #d2b48c;
+            --silk-cream: rgba(255, 253, 245, 0.96);
+            --gold-leaf: #d4af37;
+        }
+
+        body {
+            margin: 0;
+            background-image: linear-gradient(rgba(74, 44, 42, 0.7), rgba(0, 0, 0, 0.8)), 
+                              url('https://images.unsplash.com/photo-1516962080544-eac695c93791?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--mahogany);
+            min-height: 100vh;
+            border: 15px solid var(--mahogany);
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: var(--silk-cream);
+            border-bottom: 2px solid var(--gold-leaf);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3rem; 
+            color: var(--mahogany);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 0;
+        }
+
+        nav { 
+            margin-top: 25px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+        }
+
+        nav a { 
+            text-decoration: none; 
+            color: #1a1a1a; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--mahogany);
+            border-bottom: 2px solid var(--gold-leaf);
+        }
+
+        .chamber { 
+            max-width: 700px; 
+            margin: 60px auto; 
+            padding: 50px; 
+            background: var(--silk-cream);
+            border: 1px solid var(--gold-leaf);
+            box-shadow: 20px 20px 0px var(--mahogany);
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .correspondence-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            color: var(--sepia-ink);
+        }
+
+        input, textarea, select {
+            padding: 12px;
+            border: 1px solid var(--parchment-tan);
+            background: #fff;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            outline: none;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--mahogany);
+            background: #fafafa;
+        }
+
+        .btn-dispatch {
+            background: var(--mahogany);
+            color: #fff;
+            padding: 15px;
+            border: none;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            cursor: pointer;
+            transition: 0.4s;
+            margin-top: 10px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-dispatch:hover {
+            background: var(--sepia-ink);
+            letter-spacing: 2px;
+        }
+
+        footer { 
+            padding: 40px; 
+            text-align: center; 
+            background: var(--mahogany);
+            color: var(--parchment-tan);
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p style="letter-spacing: 3px; color: var(--sepia-ink);">FOR DISCREET ENQUIRIES ONLY</p>
+        <h1>THE WRITING DESK</h1>
+        <nav>
+            <a href="index.html">Entrance</a>
+            <a href="pedigree.html">Pedigree</a>
+            <a href="offerings.html">Stakes</a>
+            <a href="papers.html">News</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="music-room.html">Library</a>
+            <a href="drawing-room.html">Drawing Room</a>
+            <a href="conservatory.html">Garden</a>
+            <a href="modiste.html">Atelier</a>
+            <a href="writing-desk.html" style="color: var(--mahogany);">Correspondence</a>
+        </nav>
+    </header>
+
+    <div class="chamber">
+        <h2>Request an Audience</h2>
+        <p style="text-align: center; margin-bottom: 30px;">Pray, do not hesitate to reach out. We await your dispatch with a sharp quill and an open mind.</p>
+        
+        <form class="correspondence-form" onsubmit="event.preventDefault(); sendMail();">
+            <div class="input-group">
+                <label>Your Name (As it appears on the Social Census)</label>
+                <input type="text" id="userName" placeholder="Enter your full title..." required>
+            </div>
+
+            <div class="input-group">
+                <label>Your Digital Address (Email)</label>
+                <input type="email" id="userEmail" placeholder="Where shall we send the reply?" required>
+            </div>
+
+            <div class="input-group">
+                <label>The Nature of Your Visit</label>
+                <select id="visitNature">
+                    <option>A Professional Alliance</option>
+                    <option>A Social Call</option>
+                    <option>A Pressing Curiosity</option>
+                    <option>A Secret Shared</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Your Message (Be as spirited as you wish)</label>
+                <textarea id="userMessage" rows="6" placeholder="Write your letter here..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-dispatch">Dispatch the Footman</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>"I am a scholar of human nature. I believe I can decipher your intent."</p>
+        <small style="color: var(--parchment-tan);">🐾 Newton ensures all mail is properly inspected for snacks.</small>
+    </footer>
+
+    <script>
+        function sendMail() {
+            const adminEmail = "vrindaaggarwal1234@gmail.com";
+            const name = document.getElementById('userName').value;
+            const email = document.getElementById('userEmail').value;
+            const nature = document.getElementById('visitNature').value;
+            const message = document.getElementById('userMessage').value;
+
+            // Formatting the subject
+            const subject = encodeURIComponent("Social Inquiry from " + name);
+
+            // Constructing the body with the User's Email included
+            const body = encodeURIComponent(
+                "Dearest Admin,\n\n" + 
+                "Nature of Visit: " + nature + "\n" +
+                "Sender's Social Address: " + email + "\n\n" +
+                "Message:\n" + message + "\n\n" +
+                "Yours Faithfully,\n" + name
+            );
+
+            // Generating the Link
+            const mailtoLink = `mailto:${adminEmail}?subject=${subject}&body=${body}`;
+
+            // Redirecting to Gmail/Mail Client
+            window.location.href = mailtoLink;
+        }
+    </script>
+
+</body>
+</html>

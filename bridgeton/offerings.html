@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <title>The Season's Offerings | Kate Sharma Inspired</title>
+    <style>
+        :root {
+            --blush-pink: #f4c2c2;
+            --rose-gold: #b76e79;
+            --kate-teal: #006666; /* Teal accent to ground the pink */
+            --silk-cream: rgba(255, 253, 245, 0.95);
+            --ink-black: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            /* Background: Soft pink tulips or a Regency ballroom in morning light */
+            background-image: linear-gradient(rgba(244, 194, 194, 0.4), rgba(0, 0, 0, 0.6)), 
+                              url('https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--ink-black);
+            min-height: 100vh;
+            border: 15px solid var(--blush-pink);
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: var(--silk-cream);
+            border-bottom: 2px solid var(--rose-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3rem; 
+            color: var(--rose-gold);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 0;
+        }
+
+        nav { 
+            margin-top: 25px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+        }
+
+        nav a { 
+            text-decoration: none; 
+            color: var(--ink-black); 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--rose-gold);
+            border-bottom: 2px solid var(--rose-gold);
+        }
+
+        .chamber { 
+            max-width: 900px; 
+            margin: 60px auto; 
+            padding: 50px; 
+            background: var(--silk-cream);
+            border: 1px solid var(--rose-gold);
+            box-shadow: 20px 20px 0px var(--blush-pink);
+            text-align: center;
+        }
+
+        .dance-card-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .dance-card {
+            background: white;
+            border: 1px solid var(--blush-pink);
+            padding: 30px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .dance-card:hover {
+            box-shadow: 0px 10px 20px rgba(183, 110, 121, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .dance-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--rose-gold);
+            font-style: italic;
+            border-bottom: 1px solid var(--blush-pink);
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .btn-blush {
+            background: var(--rose-gold);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .btn-blush:hover {
+            background: var(--kate-teal);
+        }
+
+        footer { 
+            padding: 40px; 
+            text-align: center; 
+            background: var(--rose-gold);
+            color: white;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p style="letter-spacing: 3px; color: var(--rose-gold);">THE SEASON'S MOST ANTICIPATED DANCES</p>
+        <h1>THE OFFERINGS</h1>
+        <nav>
+            <a href="index.html">Entrance</a>
+            <a href="pedigree.html">Pedigree</a>
+            <a href="offerings.html" style="color: var(--rose-gold);">Stakes</a>
+            <a href="papers.html">News</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="music-room.html">Library</a>
+            <a href="drawing-room.html">Drawing Room</a>
+            <a href="conservatory.html">Garden</a>
+            <a href="modiste.html">Atelier</a>
+            <a href="writing-desk.html">Correspondence</a>
+        </nav>
+    </header>
+
+    <div class="chamber">
+        <h2 style="font-family: 'Playfair Display'; font-style: italic; font-size: 2.2rem; color: var(--rose-gold);">A Full Dance Card</h2>
+        <p>One must be selective with whom they share a waltz. Below are our curated services, designed for those who appreciate the finer details of a well-executed strategy.</p>
+        
+        
+
+        <div class="dance-card-container">
+            <div class="dance-card">
+                <h3>The First Waltz</h3>
+                <p>A comprehensive introduction and foundational strategy. Perfect for those making their debut in the market.</p>
+                <a href="writing-desk.html" class="btn-blush">Request a Dance</a>
+            </div>
+            <div class="dance-card">
+                <h3>The Grand Quadrille</h3>
+                <p>Intricate, synchronized movements for established estates looking to expand their influence.</p>
+                <a href="writing-desk.html" class="btn-blush">Request a Dance</a>
+            </div>
+            <div class="dance-card">
+                <h3>The Promenade</h3>
+                <p>Ongoing consultation and social management to ensure your reputation remains spotless.</p>
+                <a href="writing-desk.html" class="btn-blush">Request a Dance</a>
+            </div>
+            <div class="dance-card">
+                <h3>The Pall Mall Stakes</h3>
+                <p>Competitive analysis and aggressive growth strategies for the most spirited incomparables.</p>
+                <a href="writing-desk.html" class="btn-blush">Request a Dance</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>"It is not just a dance. It is a declaration."</p>
+        <small style="color: var(--blush-pink);">🐾 Newton thinks pink is a very dashing color for a bow, don't you think?</small>
+    </footer>
+
+</body>
+</html>

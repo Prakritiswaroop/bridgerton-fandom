@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <title>The Portrait Gallery | A Legacy in Blue</title>
+    <style>
+        :root {
+            --sharma-blue: #002366; /* Deep Royal Blue */
+            --regency-gold: #d4af37;
+            --silk-cream: rgba(255, 253, 245, 0.94);
+            --ink-black: #0a0a0a;
+        }
+
+        body {
+            margin: 0;
+            background-image: linear-gradient(rgba(0, 35, 102, 0.6), rgba(0, 0, 0, 0.8)), 
+                              url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--ink-black);
+            min-height: 100vh;
+            border: 15px solid var(--sharma-blue);
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: var(--silk-cream);
+            border-bottom: 3px double var(--regency-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3rem; 
+            color: var(--sharma-blue);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 0;
+        }
+
+        nav { 
+            margin-top: 25px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+        }
+
+        nav a { 
+            text-decoration: none; 
+            color: var(--ink-black); 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--sharma-blue);
+            border-bottom: 2px solid var(--regency-gold);
+        }
+
+        .chamber { 
+            max-width: 1100px; 
+            margin: 60px auto; 
+            padding: 50px; 
+            background: var(--silk-cream);
+            border: 1px solid var(--regency-gold);
+            box-shadow: 20px 20px 0px var(--sharma-blue);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .portrait-frame {
+            border: 8px solid var(--regency-gold);
+            background: white;
+            padding: 10px;
+            transition: transform 0.4s ease;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portrait-frame img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            border: 1px solid #eee;
+        }
+
+        .portrait-frame:hover {
+            transform: rotate(-1deg) scale(1.03);
+        }
+
+        .caption {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+            color: var(--sharma-blue);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* Styling for the Botpress Embed Chamber */
+        .bot-chamber {
+            height: 600px;
+            padding: 0;
+            overflow: hidden;
+            background: white;
+            border: 1px solid var(--regency-gold);
+            margin-top: 50px;
+        }
+
+        footer { 
+            padding: 40px; 
+            text-align: center; 
+            background: var(--sharma-blue);
+            color: white;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p style="letter-spacing: 3px; color: var(--regency-gold);">A COLLECTION OF TRIUMPHS</p>
+        <h1>THE PORTRAIT GALLERY</h1>
+        <nav>
+            <a href="index.html">Entrance</a>
+            <a href="pedigree.html">Pedigree</a>
+            <a href="offerings.html">Stakes</a>
+            <a href="papers.html">News</a>
+            <a href="gallery.html" style="color: var(--sharma-blue);">Gallery</a>
+            <a href="music-room.html">Library</a>
+            <a href="drawing-room.html">Drawing Room</a>
+            <a href="conservatory.html">Garden</a>
+            <a href="modiste.html">Atelier</a>
+            <a href="writing-desk.html">Correspondence</a>
+        </nav>
+    </header>
+
+    <div class="chamber">
+        <h2 style="font-family: 'Playfair Display'; font-style: italic; font-size: 2.2rem; text-align: center;">The Season's Successes</h2>
+        <p style="text-align: center;">A visual record of our most daring endeavors. Each frame captures a moment where strategy met style.</p>
+        
+        <div class="gallery-grid">
+            <div class="portrait-frame">
+                <img src="daphne.jpeg" alt="Daphne">
+                <div class="caption">Daphne Bridgerton</div>
+            </div>
+
+            <div class="portrait-frame">
+                <img src="anthony.jpeg" alt="Anthony">
+                <div class="caption">Anthony Bridgerton</div>
+            </div>
+
+            <div class="portrait-frame">
+                <img src="eloise.jpeg" alt="Eloise">
+                <div class="caption">Eloise Bridgerton</div>
+            </div>
+
+            <div class="portrait-frame">
+                <img src="benneduct.jpeg" alt="Benedict">
+                <div class="caption">Benedict Bridgerton</div>
+            </div>
+
+            <div class="portrait-frame">
+                <img src="colin.jpeg" alt="Colin">
+                <div class="caption">Colin Bridgerton</div>
+            </div>
+
+            <div class="portrait-frame">
+                <img src="simon.jpeg" alt="Simon">
+                <div class="caption">Simon Basset</div>
+            </div>
+
+            <div class="portrait-frame">
+                <img src="kate.jpeg" alt="Kate">
+                <div class="caption">Kate Sharma</div>
+            </div>
+
+            <div class="portrait-frame">
+                <img src="penelope.jpeg" alt="Penelope">
+                <div class="caption">Penelope Featherington</div>
+            </div>
+
+            <div class="portrait-frame">
+                <img src="francesca.jpeg" alt="Francesca">
+                <div class="caption">Francesca Bridgerton</div>
+            </div>
+
+            <div class="portrait-frame">
+                <img src="sophie.jpeg" alt="Sophie">
+                <div class="caption">Sophie Beckett</div>
+            </div>
+        </div>
+
+        <div class="bot-chamber">
+            <h3 style="text-align: center; font-family: 'Playfair Display'; padding-top: 15px; color: var(--sharma-blue);">The Social Ledger</h3>
+            <p style="text-align: center; font-size: 0.9rem; color: var(--regency-gold);">Inquire with Lady Whistledown's AI Assistant</p>
+            <iframe 
+                src="https://cdn.botpress.cloud/webchat/v3.6/shareable.html?configUrl=https://files.bpcontent.cloud/2026/03/14/07/20260314073249-5BSC9UAN.json" 
+                width="100%" 
+                height="500px" 
+                style="border: none;"
+                title="Lady Whistledown Chatbot">
+            </iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>"It is not a performance. It is a legacy."</p>
+        <small style="color: var(--regency-gold);">🐾 Newton claims the best light for a portrait is by the window.</small>
+    </footer>
+
+</body>
+</html>

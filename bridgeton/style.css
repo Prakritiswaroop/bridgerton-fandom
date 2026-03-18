@@ -1,0 +1,87 @@
+/* style.css - The Kate Sharma Visual Collection */
+:root {
+  --kate-teal: #006666;
+  --spiced-saffron: #e3963e; 
+  --royal-purple: #4b0082;
+  --cream-silk: rgba(255, 253, 245, 0.85); /* Made translucent to see background */
+  --ink-black: #1a1a1a;
+}
+
+body {
+  margin: 0;
+  /* KATE-INSPIRED BACKGROUND IMAGE */
+  /* This is a moody, dark floral pattern that matches the teal/gold theme */
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                    url('https://images.unsplash.com/photo-1533038590840-1cde6e668a91?auto=format&fit=crop&q=80&w=2000');
+  background-size: cover;
+  background-attachment: fixed; /* Parallax effect */
+  background-position: center;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--ink-black);
+  min-height: 100vh;
+  border: 15px solid var(--kate-teal); /* The "Frame" */
+}
+
+header {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--cream-silk); /* Translucent cream so the image peeks through */
+  border-bottom: 2px solid var(--spiced-saffron);
+  backdrop-filter: blur(5px); /* Modern frosted glass effect */
+}
+
+h1 { 
+  font-family: 'Playfair Display', serif; 
+  font-size: 3.5rem; 
+  color: var(--kate-teal);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+nav { margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+nav a { 
+  text-decoration: none; 
+  color: var(--ink-black); 
+  font-weight: bold; 
+  text-transform: uppercase; 
+  font-size: 0.9rem;
+}
+
+.chamber { 
+  max-width: 800px; 
+  margin: 60px auto; 
+  padding: 50px; 
+  line-height: 1.8; 
+  text-align: center;
+  background: var(--cream-silk);
+  border: 1px solid var(--spiced-saffron);
+  box-shadow: 10px 10px 0px var(--kate-teal);
+  backdrop-filter: blur(10px);
+}
+
+.btn-sovereign {
+  background: var(--kate-teal);
+  color: white;
+  padding: 15px 35px;
+  border: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 25px;
+  transition: 0.3s;
+}
+
+.btn-sovereign:hover {
+  background: var(--royal-purple);
+  letter-spacing: 1px;
+}
+
+footer { 
+  padding: 40px; 
+  text-align: center; 
+  background: rgba(0, 102, 102, 0.9);
+  color: white;
+}

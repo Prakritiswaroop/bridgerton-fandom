@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <title>The Modiste | Bespoke Sovereign Style</title>
+    <style>
+        :root {
+            --sterling-silver: #c0c0c0;
+            --steel-grey: #71797e;
+            --charcoal: #36454f;
+            --silk-white: rgba(255, 255, 255, 0.95);
+            --ink-black: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            /* UPDATED: Background set to modiste.jpeg with a sophisticated silver-charcoal overlay */
+            background-image: linear-gradient(rgba(192, 192, 192, 0.4), rgba(54, 69, 79, 0.8)), 
+                              url('modiste.jpeg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--ink-black);
+            min-height: 100vh;
+            border: 15px solid var(--sterling-silver);
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: var(--silk-white);
+            border-bottom: 1px solid var(--sterling-silver);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3rem; 
+            color: var(--charcoal);
+            text-transform: uppercase;
+            letter-spacing: 7px;
+            margin: 0;
+        }
+
+        nav { 
+            margin-top: 25px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+        }
+
+        nav a { 
+            text-decoration: none; 
+            color: var(--ink-black); 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--steel-grey);
+            border-bottom: 2px solid var(--sterling-silver);
+        }
+
+        .chamber { 
+            max-width: 900px; 
+            margin: 60px auto; 
+            padding: 50px; 
+            background: var(--silk-white);
+            border: 1px solid var(--sterling-silver);
+            box-shadow: 0px 0px 30px rgba(192, 192, 192, 0.5);
+            position: relative;
+        }
+
+        .chamber::before {
+            content: "";
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px dashed var(--sterling-silver);
+            pointer-events: none;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2.2rem;
+            text-align: center;
+            color: var(--charcoal);
+        }
+
+        .boutique-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: var(--steel-grey);
+        }
+
+        .patterns-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .swatch {
+            background: #f9f9f9;
+            padding: 30px;
+            border: 1px solid #eee;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .swatch:hover {
+            background: #f0f0f0;
+        }
+
+        .fitting-image {
+            display: none; 
+            width: 100%;
+            margin-top: 20px;
+            border: 1px solid var(--sterling-silver);
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn-silver {
+            background: var(--charcoal);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .btn-silver:hover {
+            background: var(--steel-grey);
+        }
+
+        footer { 
+            padding: 40px; 
+            text-align: center; 
+            background: var(--charcoal);
+            color: var(--sterling-silver);
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p style="letter-spacing: 5px; color: var(--steel-grey);">BESPOKE & SOVEREIGN</p>
+        <h1>THE MODISTE</h1>
+        <nav>
+            <a href="index.html">Entrance</a>
+            <a href="pedigree.html">Pedigree</a>
+            <a href="offerings.html">Stakes</a>
+            <a href="papers.html">News</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="music-room.html">Library</a>
+            <a href="drawing-room.html">Drawing Room</a>
+            <a href="conservatory.html">Garden</a>
+            <a href="modiste.html" style="color: var(--steel-grey);">Atelier</a>
+            <a href="writing-desk.html">Correspondence</a>
+        </nav>
+    </header>
+
+    <div class="chamber">
+        <h2>Tailored to Perfection</h2>
+        <p class="boutique-intro">"A dress cannot change the world, but the woman wearing it certainly can."</p>
+        
+        <div class="patterns-grid">
+            <div class="swatch">
+                <h4 style="color: var(--charcoal);">The Viscountess Pattern</h4>
+                <p>A structure of steel wrapped in the finest silver silk. For the leaders of the ton.</p>
+                <img src="viscountess-dress.jpeg" id="viscountess-img" class="fitting-image" alt="Viscountess Gown">
+                <a href="javascript:void(0)" class="btn-silver" onclick="showViscountess()">View Fitting</a>
+            </div>
+            <div class="swatch">
+                <h4 style="color: var(--charcoal);">The Sharma Silhouette</h4>
+                <p>Clean lines, sharp edges, and effortless grace. A design that demands respect.</p>
+                <img src="sharma-dress.jpeg" id="sharma-img" class="fitting-image" alt="Sharma Gown">
+                <a href="javascript:void(0)" class="btn-silver" onclick="showSharma()">View Fitting</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>"I have no need for a corset to hold my spine straight. It is made of stronger materials."</p>
+        <small>🐾 Newton prefers the velvet scraps, if you please.</small>
+    </footer>
+
+    <script>
+        function showViscountess() {
+            document.getElementById('viscountess-img').style.display = 'block';
+        }
+
+        function showSharma() {
+            document.getElementById('sharma-img').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <title>The Drawing Room | Curiosities & Scruples</title>
+    <style>
+        :root {
+            --royal-purple: #4b0082;
+            --deep-plum: #2e003e;
+            --spiced-saffron: #e3963e; 
+            --silk-cream: rgba(255, 253, 245, 0.92);
+            --ink-black: #1a1a1a;
+        }
+
+        body {
+            margin: 0;
+            /* Background image: Rich purple floral/damask texture */
+            background-image: linear-gradient(rgba(46, 0, 62, 0.7), rgba(0, 0, 0, 0.8)), 
+                              url('https://images.unsplash.com/photo-1618346136472-090de27fe8b4?auto=format&fit=crop&q=80&w=2000');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--ink-black);
+            min-height: 100vh;
+            border: 15px solid var(--royal-purple);
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: var(--silk-cream);
+            border-bottom: 2px solid var(--spiced-saffron);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 3rem; 
+            color: var(--royal-purple);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin: 0;
+        }
+
+        nav { 
+            margin-top: 25px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 20px; 
+        }
+
+        nav a { 
+            text-decoration: none; 
+            color: var(--ink-black); 
+            font-weight: bold; 
+            text-transform: uppercase; 
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--royal-purple);
+            border-bottom: 2px solid var(--spiced-saffron);
+        }
+
+        .chamber { 
+            max-width: 800px; 
+            margin: 60px auto; 
+            padding: 50px; 
+            background: var(--silk-cream);
+            border: 1px solid var(--spiced-saffron);
+            box-shadow: 20px 20px 0px var(--royal-purple);
+            border-radius: 4px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 2.2rem;
+            text-align: center;
+            color: var(--deep-plum);
+        }
+
+        .faq-item {
+            margin-top: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+
+        summary {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--royal-purple);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::after {
+            content: "＋";
+            font-size: 1rem;
+            color: var(--spiced-saffron);
+        }
+
+        details[open] summary::after {
+            content: "—";
+        }
+
+        details p {
+            margin-top: 15px;
+            font-style: italic;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        footer { 
+            padding: 40px; 
+            text-align: center; 
+            background: var(--deep-plum);
+            color: white;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <p style="letter-spacing: 3px; color: var(--spiced-saffron);">A SETTLEMENT OF CURIOSITIES</p>
+        <h1>THE DRAWING ROOM</h1>
+        <nav>
+            <a href="index.html">Entrance</a>
+            <a href="pedigree.html">Pedigree</a>
+            <a href="offerings.html">Stakes</a>
+            <a href="papers.html">News</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="music-room.html">Library</a>
+            <a href="drawing-room.html" style="color: var(--royal-purple);">Drawing Room</a>
+            <a href="conservatory.html">Garden</a>
+            <a href="modiste.html">Atelier</a>
+            <a href="writing-desk.html">Correspondence</a>
+        </nav>
+    </header>
+
+    <div class="chamber">
+        <h2>Curiosities & Scruples</h2>
+        <p style="text-align: center;">One should never enter a room without being prepared for the conversation within. Here are the answers to the whispers currently circulating the ton.</p>
+        
+        <div class="faq-item">
+            <details>
+                <summary>Is an introduction required for service?</summary>
+                <p>While a formal introduction is tradition, we value character over pedigree. If your intentions are true and your wit is sharp, you are welcome here.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>How does one handle a competitive Viscount?</summary>
+                <p>One simply beats him at his own game. Whether on the Pall Mall field or in the digital market, strategy and a steady hand are paramount.</p>
+            </details>
+        </div>
+
+        <div class="faq-item">
+            <details>
+                <summary>Are your methods truly as sovereign as they say?</summary>
+                <p>Indeed. We do not settle for the easy path; we pave our own. Our results are as undeniable as a Sharma sister's resolve.</p>
+            </details>
+        </div>
+    </div>
+
+    <footer>
+        <p>"I have been protecting my family my whole life. I think I can handle a few questions."</p>
+        <small style="color: var(--spiced-saffron);">🐾 Newton is currently napping on the chaise lounge.</small>
+    </footer>
+
+</body>
+</html>
